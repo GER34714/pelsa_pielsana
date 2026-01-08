@@ -1,0 +1,1186 @@
+```html
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pel Sa | Cuidado de tu piel en Villa Ballester</title>
+  <meta name="description" content="Tratamientos faciales en Villa Ballester: limpieza facial profunda, radiofrecuencia e hidratación con activos. Turnos por WhatsApp." />
+  <meta name="theme-color" content="#f2e7df" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pel Sa | Cuidado de tu piel" />
+  <meta property="og:description" content="Tratamientos faciales en Villa Ballester. Turnos por WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fbf7f3;
+      --paper:#ffffff;
+      --ink:#141217;
+      --muted:#6b6163;
+
+      --nude:#f2e7df;
+      --rose:#e7c7c9;
+      --sand:#e9dccf;
+      --line:rgba(20,18,23,.10);
+
+      --accent:#b87980;     /* rosa empolvado */
+      --accent2:#c08a6a;    /* arena cálida */
+      --good:#1f8a6b;
+
+      --shadow: 0 12px 30px rgba(20,18,23,.08);
+      --shadow2: 0 18px 44px rgba(20,18,23,.10);
+
+      --r: 18px;
+      --r2: 26px;
+
+      --max: 1120px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(900px 520px at 20% 0%, rgba(231,199,201,.42), transparent 62%),
+        radial-gradient(900px 520px at 90% 10%, rgba(242,231,223,.70), transparent 60%),
+        radial-gradient(900px 520px at 60% 100%, rgba(233,220,207,.55), transparent 55%),
+        var(--bg);
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+    .wrap{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+
+    /* Topbar */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(251,247,243,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 220px;
+    }
+    .logo{
+      width:44px; height:44px;
+      border-radius:999px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,.35) 45%, transparent 70%),
+        linear-gradient(135deg, rgba(183,121,128,.24), rgba(192,138,106,.18));
+      border:1px solid rgba(183,121,128,.35);
+      box-shadow: 0 10px 24px rgba(20,18,23,.08);
+      display:grid; place-items:center;
+      overflow:hidden;
+      position:relative;
+    }
+    .logo:before{
+      content:"";
+      position:absolute; inset:-40%;
+      background: conic-gradient(from 200deg, rgba(183,121,128,.25), rgba(192,138,106,.25), rgba(231,199,201,.22), rgba(183,121,128,.25));
+      filter: blur(18px);
+      animation: spin 10s linear infinite;
+    }
+    .logo svg{ position:relative; z-index:1; opacity:.95; }
+    @keyframes spin{ to{ transform: rotate(360deg);} }
+
+    .brand h1{
+      margin:0;
+      font-family:"Playfair Display", serif;
+      letter-spacing:.2px;
+      font-size:18px;
+      line-height:1.1;
+      font-weight:700;
+    }
+    .brand p{
+      margin:2px 0 0;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.65);
+      font-size:12px;
+      color:var(--muted);
+    }
+    .chip svg{ width:14px; height:14px; opacity:.75; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:600;
+      font-size:13px;
+      cursor:pointer;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:active{ transform: translateY(1px); }
+    .btn-primary{
+      color:#fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 14px 30px rgba(183,121,128,.20);
+    }
+    .btn-primary:hover{ box-shadow: 0 18px 40px rgba(183,121,128,.26); }
+    .btn-ghost{
+      background: rgba(255,255,255,.65);
+      border-color: var(--line);
+      color: var(--ink);
+    }
+    .btn-ghost:hover{
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 10px 22px rgba(20,18,23,.06);
+    }
+    .btn svg{ width:16px; height:16px; }
+
+    /* Hero */
+    .hero{
+      padding:34px 0 10px;
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .hero-left{
+      background: rgba(255,255,255,.70);
+      border:1px solid var(--line);
+      border-radius: var(--r2);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-left:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(900px 340px at 10% 10%, rgba(231,199,201,.35), transparent 58%),
+                  radial-gradient(700px 320px at 85% 20%, rgba(242,231,223,.65), transparent 55%),
+                  radial-gradient(900px 420px at 50% 100%, rgba(233,220,207,.42), transparent 55%);
+      pointer-events:none;
+    }
+    .hero-left > *{ position:relative; z-index:1; }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:1px solid rgba(183,121,128,.25);
+      background: rgba(231,199,201,.22);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      color: rgba(20,18,23,.85);
+      font-weight:600;
+    }
+    .kicker .dot{
+      width:8px; height:8px;
+      border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(183,121,128,.12);
+    }
+    .hero h2{
+      margin:14px 0 8px;
+      font-family:"Playfair Display", serif;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height:1.04;
+      letter-spacing: .2px;
+    }
+    .hero p.lead{
+      margin:0;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height:1.6;
+      max-width: 60ch;
+    }
+
+    .hero-cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:16px;
+      align-items:center;
+    }
+    .hero-badges{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+    .badge{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.75);
+      font-size:12px;
+      color: rgba(20,18,23,.85);
+    }
+    .badge b{ font-weight:700; }
+    .badge svg{ width:16px; height:16px; opacity:.75; }
+
+    .hero-right{
+      display:grid;
+      gap:14px;
+    }
+    .photo-card{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      overflow:hidden;
+      box-shadow: var(--shadow2);
+      background: #fff;
+      position:relative;
+      min-height: 280px;
+    }
+    .photo-card .img{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(115deg, rgba(20,18,23,.18), rgba(20,18,23,.06)),
+        url("https://img.freepik.com/foto-gratis/vista-superior-escritorio-notebook-cafe_23-2148397906.jpg?semt=ais_hybrid&w=1200&q=80");
+      background-size:cover;
+      background-position:center;
+      filter: saturate(1.05) contrast(1.02);
+    }
+    .photo-card .overlay{
+      position:absolute; inset:0;
+      background: radial-gradient(900px 360px at 20% 15%, rgba(231,199,201,.35), transparent 55%),
+                  radial-gradient(700px 320px at 85% 15%, rgba(242,231,223,.55), transparent 55%),
+                  linear-gradient(to top, rgba(20,18,23,.52), rgba(20,18,23,.10));
+    }
+    .photo-card .content{
+      position:absolute; inset:auto 18px 18px 18px;
+      color:#fff;
+    }
+    .photo-card .content h3{
+      margin:0 0 6px;
+      font-size:16px;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .photo-card .content p{
+      margin:0;
+      font-size:12.5px;
+      opacity:.92;
+      line-height:1.45;
+    }
+
+    .mini-form{
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+    .mini-form h4{
+      margin:0 0 10px;
+      font-size:14px;
+      letter-spacing:.2px;
+    }
+    .mini-form .row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .field label{
+      font-size:11px;
+      color: var(--muted);
+      font-weight:600;
+    }
+    .field input, .field select, .field textarea{
+      border-radius: 12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.9);
+      padding:10px 10px;
+      font-size:13px;
+      outline:none;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus{
+      border-color: rgba(183,121,128,.45);
+      box-shadow: 0 0 0 4px rgba(183,121,128,.12);
+    }
+    .mini-form .actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      margin-top:10px;
+      flex-wrap:wrap;
+    }
+    .mini-note{
+      color: var(--muted);
+      font-size:11.5px;
+      line-height:1.4;
+      margin:0;
+      max-width: 42ch;
+    }
+
+    /* Sections */
+    section{ padding: 18px 0; }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin: 8px 0 14px;
+    }
+    .section-head h3{
+      margin:0;
+      font-family:"Playfair Display", serif;
+      font-size: 22px;
+      letter-spacing:.2px;
+    }
+    .section-head p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height:1.5;
+      max-width: 58ch;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+
+    .card{
+      background: rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      border-radius: var(--r2);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .card:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(420px 220px at 0% 0%, rgba(231,199,201,.24), transparent 60%),
+                  radial-gradient(420px 220px at 100% 10%, rgba(242,231,223,.40), transparent 60%);
+      pointer-events:none;
+    }
+    .card > *{ position:relative; z-index:1; }
+    .card .icon{
+      width:42px; height:42px;
+      border-radius: 14px;
+      border:1px solid rgba(183,121,128,.20);
+      background: rgba(231,199,201,.22);
+      display:grid; place-items:center;
+      margin-bottom:10px;
+    }
+    .card .icon svg{ width:20px; height:20px; opacity:.85; }
+    .card h4{
+      margin:0 0 6px;
+      font-size:15px;
+      letter-spacing:.2px;
+    }
+    .card p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height:1.55;
+    }
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .pill{
+      font-size:11.5px;
+      color: rgba(20,18,23,.85);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      padding:6px 10px;
+      border-radius:999px;
+    }
+
+    /* Combo cards */
+    .combo{
+      padding: 18px;
+    }
+    .combo .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .tag{
+      font-size:11px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(31,138,107,.18);
+      background: rgba(31,138,107,.10);
+      color: rgba(20,18,23,.86);
+      font-weight:700;
+    }
+    .pricehint{
+      font-size:12px;
+      color: var(--muted);
+      font-weight:600;
+    }
+    .checklist{
+      list-style:none;
+      padding:0; margin:10px 0 0;
+      display:grid;
+      gap:8px;
+    }
+    .checklist li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      font-size: 13px;
+      color: rgba(20,18,23,.88);
+      line-height:1.45;
+    }
+    .checklist svg{
+      width:16px; height:16px;
+      margin-top:2px;
+      flex:0 0 auto;
+      color: var(--good);
+    }
+
+    /* Split section */
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    .panel{
+      background: rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      border-radius: var(--r2);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .panel h4{
+      margin:0 0 10px;
+      font-size:15px;
+      letter-spacing:.2px;
+    }
+    .bullets{
+      margin:0; padding-left:18px;
+      color: rgba(20,18,23,.88);
+      line-height:1.7;
+      font-size: 13px;
+    }
+    .muted{
+      color: var(--muted);
+      font-size: 13px;
+      line-height:1.55;
+      margin:0;
+    }
+
+    /* Testimonials */
+    .quote{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .quote p{
+      margin:0;
+      font-size:13px;
+      line-height:1.6;
+      color: rgba(20,18,23,.88);
+    }
+    .quote .who{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-top:2px;
+      color: var(--muted);
+      font-size:12px;
+    }
+
+    /* Contact */
+    .contact{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    .contact .map{
+      min-height: 220px;
+      border-radius: var(--r2);
+      border:1px solid var(--line);
+      overflow:hidden;
+      background:
+        radial-gradient(420px 220px at 20% 20%, rgba(231,199,201,.25), transparent 60%),
+        radial-gradient(420px 220px at 90% 20%, rgba(242,231,223,.55), transparent 60%),
+        linear-gradient(135deg, rgba(183,121,128,.06), rgba(192,138,106,.06));
+      position:relative;
+      box-shadow: var(--shadow);
+    }
+    .map .pin{
+      position:absolute;
+      inset:auto auto 18px 18px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      max-width: 52ch;
+      background: rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:12px 12px;
+      box-shadow: 0 12px 26px rgba(20,18,23,.08);
+    }
+    .pin b{ font-size:13px; }
+    .pin span{ color: var(--muted); font-size:12px; line-height:1.4; }
+
+    .contact .box{
+      background: rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      border-radius: var(--r2);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .contact .box h4{ margin:0; font-size:15px; }
+    .contact .box .item{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color: rgba(20,18,23,.88);
+      font-size: 13px;
+      line-height:1.5;
+    }
+    .contact .box .item svg{ width:16px; height:16px; opacity:.75; margin-top:2px; }
+    .contact .box .stack{ display:grid; gap:10px; }
+    .contact .box .cta2{ display:flex; gap:10px; flex-wrap:wrap; }
+
+    /* Footer */
+    footer{
+      margin-top: 16px;
+      padding: 22px 0 30px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size:12px;
+    }
+    footer .foot{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    footer a{ text-decoration:underline; text-underline-offset: 3px; }
+
+    /* Floating buttons */
+    .float{
+      position:fixed;
+      right:14px;
+      z-index:100;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      bottom: calc(14px + env(safe-area-inset-bottom));
+    }
+    .fab{
+      width:46px; height:46px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow: 0 16px 34px rgba(20,18,23,.18);
+      cursor:pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
+      user-select:none;
+    }
+    .fab:active{ transform: translateY(1px); }
+    .fab svg{ width:20px; height:20px; }
+    .fab-wa{
+      background: linear-gradient(135deg, #19a46b, #0f7f54);
+      color:#fff;
+    }
+    .fab-ig{
+      width:40px; height:40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f9c36a, #d96b9b, #7b5cff);
+      color:#fff;
+      align-self:flex-end;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .hero-right{ grid-template-columns: 1fr; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .split{ grid-template-columns: 1fr; }
+      .contact{ grid-template-columns: 1fr; }
+      .brand{ min-width: auto; }
+    }
+    @media (max-width: 520px){
+      .wrap{ width: calc(100% - 28px); }
+      .topbar-inner{ padding: 12px 0; }
+      .chip{ display:none; }
+      .hero-left{ padding: 18px; }
+      .mini-form .row{ grid-template-columns: 1fr; }
+      .btn{ padding: 12px 13px; }
+      .float{ right:12px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <div class="logo" aria-hidden="true">
+          <!-- simple flower mark -->
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 6.3c1.35-2.2 3.9-3.1 5.4-1.6s.6 4.05-1.6 5.4c2.2 1.35 3.1 3.9 1.6 5.4s-4.05.6-5.4-1.6C10.65 16.5 8.1 17.4 6.6 15.9s-.6-4.05 1.6-5.4C6 9.15 5.1 6.6 6.6 5.1s4.05-.6 5.4 1.6Z" stroke="rgba(20,18,23,.78)" stroke-width="1.4" />
+            <path d="M12 14.2a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" fill="rgba(20,18,23,.78)" opacity=".15"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Pel Sa</h1>
+          <p>Cuidado de tu piel · Villa Ballester</p>
+        </div>
+      </a>
+
+      <div class="nav">
+        <span class="chip" title="Zona de atención">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11Z" stroke="currentColor" stroke-width="1.6"/><path d="M12 13.2a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" fill="currentColor" opacity=".18"/></svg>
+          Villa Ballester
+        </span>
+
+        <a class="btn btn-ghost" href="#servicios">
+          Servicios
+        </a>
+        <a class="btn btn-ghost" href="#combos">
+          Combos
+        </a>
+        <a class="btn btn-primary" id="btnTopWhatsApp" href="#" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M20 11.9c0 4.5-3.8 8.1-8.4 8.1-1.4 0-2.7-.3-3.9-.9L4 20l1-3.6c-.7-1.2-1.1-2.6-1.1-4.1C3.9 7.8 7.7 4.2 12.3 4.2 16.7 4.2 20 7.7 20 11.9Z" stroke="currentColor" stroke-width="1.6" opacity=".9"/>
+            <path d="M9.4 9.1c.2-.4.4-.4.7-.4h.6c.2 0 .5.1.6.4l.5 1.2c.1.3.1.5-.1.7l-.4.4c-.2.2-.1.4 0 .6.3.6 1.1 1.5 2 1.9.2.1.4.1.6-.1l.6-.5c.2-.2.4-.2.7-.1l1.2.6c.3.1.4.4.3.7-.1.6-.5 1.2-1.1 1.4-.7.2-1.6.2-3.3-.5-2-.8-3.3-2.8-3.4-2.9-.1-.2-1-1.3-1-2.5 0-1.2.6-1.8.9-2Z" fill="currentColor" opacity=".9"/>
+          </svg>
+          Reservar turno
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero" id="inicio">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="kicker"><span class="dot"></span> Atención con turno · Diagnóstico simple por WhatsApp</div>
+
+          <h2>Cuidado de la piel con resultados visibles.</h2>
+          <p class="lead">
+            Tratamientos faciales en <b>Villa Ballester</b> para mejorar textura, luminosidad y firmeza.
+            Si no sabés qué elegir, te recomiendo la opción ideal según tu piel y tu objetivo.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" id="btnHeroWhatsApp" href="#" rel="noopener">
+              Reservar por WhatsApp
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost" id="btnHeroInstagram" href="https://instagram.com/pelsa_pielsana/" target="_blank" rel="noopener">
+              Ver Instagram
+              <svg viewBox="0 0 24 24" fill="none"><path d="M16.5 3h-9A4.5 4.5 0 0 0 3 7.5v9A4.5 4.5 0 0 0 7.5 21h9A4.5 4.5 0 0 0 21 16.5v-9A4.5 4.5 0 0 0 16.5 3Z" stroke="currentColor" stroke-width="1.6"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.6"/><path d="M17.5 6.6h.01" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+            </a>
+          </div>
+
+          <div class="hero-badges">
+            <div class="badge">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 12.5l4 4L20 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><b>Enfoque personalizado</b> según tu piel</span>
+            </div>
+            <div class="badge">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7 7 .6-5.3 4.5 1.8 6.9L12 17.8 5.5 21l1.8-6.9L2 9.6 9 9l3-7Z" stroke="currentColor" stroke-width="1.6" opacity=".9"/></svg>
+              <span><b>Combos sugeridos</b> para decidir rápido</span>
+            </div>
+            <div class="badge">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="1.6" opacity=".9"/></svg>
+              <span><b>Turnos</b> por WhatsApp o MD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="photo-card" aria-label="Imagen de ambientación">
+            <div class="img" role="img" aria-label="Ambiente cálido y profesional"></div>
+            <div class="overlay"></div>
+            <div class="content">
+              <h3>Una rutina, un plan, un resultado.</h3>
+              <p>La idea es simple: elegimos el tratamiento correcto y sostenemos con recomendaciones prácticas.</p>
+            </div>
+          </div>
+
+          <div class="mini-form" id="miniForm">
+            <h4>Te recomiendo el combo ideal en 30 segundos</h4>
+            <div class="row">
+              <div class="field">
+                <label for="obj">Objetivo</label>
+                <select id="obj">
+                  <option value="Luminosidad y limpieza">Luminosidad y limpieza</option>
+                  <option value="Firmeza y textura">Firmeza y textura</option>
+                  <option value="Hidratación y elasticidad">Hidratación y elasticidad</option>
+                  <option value="No sé, quiero que me asesores">No sé, quiero que me asesores</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="piel">Tipo de piel</label>
+                <select id="piel">
+                  <option value="Normal / mixta">Normal / mixta</option>
+                  <option value="Grasa">Grasa</option>
+                  <option value="Seca">Seca</option>
+                  <option value="Sensible">Sensible</option>
+                  <option value="No estoy seguro/a">No estoy seguro/a</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="nota">¿Algo a tener en cuenta? (opcional)</label>
+              <input id="nota" type="text" placeholder="Ej: poros, piel opaca, flacidez, etc." />
+            </div>
+
+            <div class="actions">
+              <button class="btn btn-primary" id="btnAsesorar" type="button">
+                Pedir recomendación
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <p class="mini-note">
+                Sin vueltas: te paso el combo sugerido y opciones de turno.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Servicios -->
+  <section id="servicios">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h3>Servicios principales</h3>
+          <p>Los más pedidos para mejorar la piel de forma progresiva, con un plan simple y sostenible.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 17c3-2 7-2 10 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              <path d="M7 7c3 2 7 2 10 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              <path d="M12 3c4.4 0 8 3.6 8 8s-3.6 10-8 10-8-5.6-8-10 3.6-8 8-8Z" stroke="currentColor" stroke-width="1.6" opacity=".9"/>
+            </svg>
+          </div>
+          <h4>Limpieza facial profunda</h4>
+          <p>Renovación, poros más limpios y piel más luminosa. Ideal para empezar y ver un cambio real.</p>
+          <div class="pill-row">
+            <span class="pill">Puntos negros</span>
+            <span class="pill">Textura</span>
+            <span class="pill">Luminosidad</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M6 13c3-6 9-6 12 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              <path d="M8 16c2-4 6-4 8 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              <path d="M12 21c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8Z" stroke="currentColor" stroke-width="1.6" opacity=".9"/>
+            </svg>
+          </div>
+          <h4>Radiofrecuencia facial</h4>
+          <p>Tratamiento no invasivo para mejorar firmeza y textura. Ideal si buscás “efecto piel más firme”.</p>
+          <div class="pill-row">
+            <span class="pill">Firmeza</span>
+            <span class="pill">Elasticidad</span>
+            <span class="pill">Mantenimiento</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2s4 4 4 8-1.8 6-4 6-4-2-4-6 4-8 4-8Z" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M6 21c1.7-2 4-3 6-3s4.3 1 6 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h4>Hidratación + activos</h4>
+          <p>Nutrición y equilibrio para que la piel se vea más suave, uniforme y con mejor “rebote”.</p>
+          <div class="pill-row">
+            <span class="pill">Piel opaca</span>
+            <span class="pill">Sequedad</span>
+            <span class="pill">Barreras</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Combos -->
+  <section id="combos">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h3>Combos recomendados</h3>
+          <p>Elegí por objetivo. Menos vueltas, mejor decisión y un plan claro desde el primer turno.</p>
+        </div>
+        <a class="btn btn-ghost" href="#contacto">Consultar disponibilidad</a>
+      </div>
+
+      <div class="grid-3">
+        <article class="card combo">
+          <div class="top">
+            <span class="tag">Más pedido</span>
+            <span class="pricehint">Ideal para empezar</span>
+          </div>
+          <h4>Combo Glow</h4>
+          <p class="muted">Para piel opaca o con poros visibles. Deja la piel más limpia y con brillo saludable.</p>
+          <ul class="checklist">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Limpieza facial profunda
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Hidratación / máscara final según piel
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Recomendación de rutina simple
+            </li>
+          </ul>
+          <div class="hero-cta" style="margin-top:14px;">
+            <a class="btn btn-primary" data-wa="Quiero reservar el *Combo Glow* (Limpieza + Hidratación). ¿Qué turnos tenés?">Reservar Glow</a>
+          </div>
+        </article>
+
+        <article class="card combo">
+          <div class="top">
+            <span class="tag" style="border-color: rgba(183,121,128,.20); background: rgba(183,121,128,.10);">Firmeza</span>
+            <span class="pricehint">No invasivo</span>
+          </div>
+          <h4>Combo Firmeza</h4>
+          <p class="muted">Para mejorar textura, tonicidad y “efecto piel más firme” de forma progresiva.</p>
+          <ul class="checklist">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Radiofrecuencia facial
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Activos de soporte (según piel)
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Plan de mantenimiento sugerido
+            </li>
+          </ul>
+          <div class="hero-cta" style="margin-top:14px;">
+            <a class="btn btn-primary" data-wa="Quiero reservar el *Combo Firmeza* (Radiofrecuencia). ¿Qué turnos tenés?">Reservar Firmeza</a>
+          </div>
+        </article>
+
+        <article class="card combo">
+          <div class="top">
+            <span class="tag" style="border-color: rgba(192,138,106,.22); background: rgba(192,138,106,.12);">Mantenimiento</span>
+            <span class="pricehint">Para sostener</span>
+          </div>
+          <h4>Combo Mantenimiento</h4>
+          <p class="muted">Para sostener resultados. Ideal si querés constancia sin pensar qué hacer cada vez.</p>
+          <ul class="checklist">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              2 sesiones al mes (según objetivo)
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Ajuste de rutina con seguimiento
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Recomendaciones de cuidado diario
+            </li>
+          </ul>
+          <div class="hero-cta" style="margin-top:14px;">
+            <a class="btn btn-primary" data-wa="Quiero info del *Combo Mantenimiento* (2 sesiones al mes). ¿Me contás opciones y turnos?">Pedir info</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios + Proceso -->
+  <section>
+    <div class="wrap">
+      <div class="split">
+        <div class="panel">
+          <h4>Qué podés esperar</h4>
+          <ul class="bullets">
+            <li>Piel más luminosa y uniforme.</li>
+            <li>Textura más suave y poros visualmente más “limpios”.</li>
+            <li>Sensación de firmeza y mejor elasticidad con constancia.</li>
+            <li>Recomendación práctica para sostener resultados en casa.</li>
+          </ul>
+          <p class="muted" style="margin-top:10px;">
+            Cada piel es distinta: por eso el objetivo es elegir bien desde el inicio y mantener un plan simple.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h4>Cómo trabajamos (simple y claro)</h4>
+          <ul class="bullets">
+            <li>Me contás tu objetivo y tu tipo de piel por WhatsApp.</li>
+            <li>Te recomiendo el combo / servicio más conveniente.</li>
+            <li>Reservás turno y te preparo indicaciones previas.</li>
+            <li>Después del turno: tips cortos para sostener el cambio.</li>
+          </ul>
+          <div class="hero-cta" style="margin-top:12px;">
+            <a class="btn btn-ghost" href="#miniForm">Quiero recomendación</a>
+            <a class="btn btn-primary" id="btnProcesoWhatsApp" href="#" rel="noopener">Reservar turno</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h3>Opiniones</h3>
+          <p>Si todavía no tenés reseñas, dejé textos de ejemplo para reemplazar por los reales cuando quieras.</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <article class="card quote">
+          <p>“Me encantó cómo me explicó todo. La piel me quedó súper luminosa y suave. Volví al mes para mantener.”</p>
+          <div class="who"><span>Cliente</span><span>Villa Ballester</span></div>
+        </article>
+
+        <article class="card quote">
+          <p>“Fui por radiofrecuencia y se nota la diferencia. Me gustó que me recomendó una rutina simple para sostener.”</p>
+          <div class="who"><span>Cliente</span><span>Zona norte</span></div>
+        </article>
+
+        <article class="card quote">
+          <p>“Ambiente re prolijo y atención re cálida. Me asesoró según mi piel, sin venderme cosas de más.”</p>
+          <div class="who"><span>Cliente</span><span>Villa Ballester</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h3>Contacto</h3>
+          <p>Turnos por WhatsApp o MD. Si querés, te paso el combo ideal según tu objetivo.</p>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="map" aria-label="Ubicación">
+          <div class="pin">
+            <b>Villa Ballester</b>
+            <span>Atención con turno. Consultá disponibilidad y te recomiendo el servicio/ combo ideal según tu piel.</span>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="stack">
+            <h4>Reservas</h4>
+
+            <div class="item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 11.9c0 4.5-3.8 8.1-8.4 8.1-1.4 0-2.7-.3-3.9-.9L4 20l1-3.6c-.7-1.2-1.1-2.6-1.1-4.1C3.9 7.8 7.7 4.2 12.3 4.2 16.7 4.2 20 7.7 20 11.9Z" stroke="currentColor" stroke-width="1.6" opacity=".9"/></svg>
+              <div>
+                <b>WhatsApp:</b> 11 6492 5181<br>
+                <span class="muted">Respuesta rápida con recomendación y turnos.</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M16.5 3h-9A4.5 4.5 0 0 0 3 7.5v9A4.5 4.5 0 0 0 7.5 21h9A4.5 4.5 0 0 0 21 16.5v-9A4.5 4.5 0 0 0 16.5 3Z" stroke="currentColor" stroke-width="1.6"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.6"/><path d="M17.5 6.6h.01" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+              <div>
+                <b>Instagram:</b> @pelsa_pielsana<br>
+                <span class="muted">Podés escribir por MD también.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta2">
+            <a class="btn btn-primary" id="btnContactWhatsApp" href="#" rel="noopener">Pedir turno</a>
+            <a class="btn btn-ghost" href="https://instagram.com/pelsa_pielsana/" target="_blank" rel="noopener">Ir a Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© <span id="year"></span> Pel Sa · Cuidado de tu piel</div>
+      <div>
+        <a href="https://ciborg347.onrender.com" target="_blank" rel="noopener">Creado y diseñado por Ciborg 347</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating CTA -->
+  <div class="float" aria-label="Accesos rápidos">
+    <a class="fab fab-ig" href="https://instagram.com/pelsa_pielsana/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M16.5 3h-9A4.5 4.5 0 0 0 3 7.5v9A4.5 4.5 0 0 0 7.5 21h9A4.5 4.5 0 0 0 21 16.5v-9A4.5 4.5 0 0 0 16.5 3Z" stroke="white" stroke-width="1.8" opacity=".92"/>
+        <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="white" stroke-width="1.8" opacity=".92"/>
+        <path d="M17.5 6.6h.01" stroke="white" stroke-width="2.8" stroke-linecap="round"/>
+      </svg>
+    </a>
+    <a class="fab fab-wa" id="fabWhatsApp" href="#" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M20 11.9c0 4.5-3.8 8.1-8.4 8.1-1.4 0-2.7-.3-3.9-.9L4 20l1-3.6c-.7-1.2-1.1-2.6-1.1-4.1C3.9 7.8 7.7 4.2 12.3 4.2 16.7 4.2 20 7.7 20 11.9Z" stroke="white" stroke-width="1.8" opacity=".92"/>
+        <path d="M9.4 9.1c.2-.4.4-.4.7-.4h.6c.2 0 .5.1.6.4l.5 1.2c.1.3.1.5-.1.7l-.4.4c-.2.2-.1.4 0 .6.3.6 1.1 1.5 2 1.9.2.1.4.1.6-.1l.6-.5c.2-.2.4-.2.7-.1l1.2.6c.3.1.4.4.3.7-.1.6-.5 1.2-1.1 1.4-.7.2-1.6.2-3.3-.5-2-.8-3.3-2.8-3.4-2.9-.1-.2-1-1.3-1-2.5 0-1.2.6-1.8.9-2Z" fill="white" opacity=".95"/>
+      </svg>
+    </a>
+  </div>
+
+  <script>
+    // Config
+    const PHONE_E164 = "5491164925181"; // +54 9 11 6492 5181
+    const DEFAULT_MSG = "Hola! Quiero reservar un turno. ¿Me recomendás un combo según mi piel y me decís qué disponibilidad tenés?";
+
+    function waUrl(message){
+      const text = encodeURIComponent(message);
+      return `https://wa.me/${PHONE_E164}?text=${text}`;
+    }
+
+    function setWaLinks(){
+      const top = document.getElementById("btnTopWhatsApp");
+      const hero = document.getElementById("btnHeroWhatsApp");
+      const proc = document.getElementById("btnProcesoWhatsApp");
+      const contact = document.getElementById("btnContactWhatsApp");
+      const fab = document.getElementById("fabWhatsApp");
+
+      [top, hero, proc, contact, fab].forEach(el => {
+        if(!el) return;
+        el.setAttribute("href", waUrl(DEFAULT_MSG));
+        el.setAttribute("target", "_blank");
+      });
+
+      // Combo buttons with custom messages
+      document.querySelectorAll("[data-wa]").forEach(a => {
+        const msg = a.getAttribute("data-wa") || DEFAULT_MSG;
+        a.setAttribute("href", waUrl(msg));
+        a.setAttribute("target", "_blank");
+        a.setAttribute("rel", "noopener");
+      });
+    }
+
+    // Mini lead form -> WhatsApp
+    function bindMiniForm(){
+      const btn = document.getElementById("btnAsesorar");
+      if(!btn) return;
+
+      btn.addEventListener("click", () => {
+        const obj = document.getElementById("obj")?.value || "";
+        const piel = document.getElementById("piel")?.value || "";
+        const nota = document.getElementById("nota")?.value?.trim() || "";
+
+        const msg =
+          `Hola! Quiero que me recomiendes el combo ideal.\n` +
+          `• Objetivo: ${obj}\n` +
+          `• Tipo de piel: ${piel}\n` +
+          (nota ? `• Nota: ${nota}\n` : "") +
+          `\n¿Me decís qué combo me conviene y qué turnos tenés?`;
+
+        window.open(waUrl(msg), "_blank", "noopener");
+      });
+    }
+
+    // Smooth scroll for internal anchors (optional)
+    function smoothAnchors(){
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener("click", (e) => {
+          const href = a.getAttribute("href");
+          if(!href || href.length < 2) return;
+          const el = document.querySelector(href);
+          if(!el) return;
+          e.preventDefault();
+          el.scrollIntoView({behavior:"smooth", block:"start"});
+        });
+      });
+    }
+
+    // Init
+    document.getElementById("year").textContent = new Date().getFullYear();
+    setWaLinks();
+    bindMiniForm();
+    smoothAnchors();
+  </script>
+</body>
+</html>
+```
